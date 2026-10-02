@@ -6,26 +6,21 @@
     <title>Rocha Chueiri | Escola Mágica Ancestral</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0d0d0d;
-            --bg-stone: #1a1a1a;
-            --bg-mountain: #12151c;
+            --bg-dark: #0a0a0c;
+            --bg-stone: #141418;
             --gold: #c9a227;
             --gold-light: #e8d48b;
             --gold-dark: #8a6d1b;
-            --ice: #a8c5d4;
-            --blood: #8b1a1a;
+            --ice: #9bb8c9;
             --text: #e0d8c8;
             --text-muted: #a89f8d;
+            --blood: #7a1a1a;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Cinzel', serif;
@@ -35,71 +30,49 @@
             overflow-x: hidden;
         }
 
-        /* Textura de pedra / fundo épico */
         body::before {
             content: '';
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            inset: 0;
             background: 
-                radial-gradient(ellipse at 20% 30%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 70%, rgba(139, 26, e26, 0.06) 0%, transparent 40%),
-                linear-gradient(180deg, #0a0a0f 0%, #12151c 40%, #0d0d0d 100%);
+                radial-gradient(ellipse at 15% 20%, rgba(201, 162, 39, 0.07) 0%, transparent 45%),
+                radial-gradient(ellipse at 85% 75%, rgba(100, 30, 30, 0.06) 0%, transparent 40%),
+                linear-gradient(180deg, #07070a 0%, #10131a 50%, #0a0a0c 100%);
             z-index: -2;
         }
 
-        /* Padrão sutil de runas / neve */
-        body::after {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px);
-            pointer-events: none;
-            z-index: -1;
-        }
-
-        /* ===== HEADER / NAV ===== */
+        /* ===== HEADER ===== */
         header {
             position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.2rem 2rem;
-            background: linear-gradient(180deg, rgba(13,13,13,0.95) 0%, rgba(13,13,13,0.7) 100%);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.3);
+            top: 0; width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(180deg, rgba(10,10,12,0.97) 0%, rgba(10,10,12,0.75) 100%);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.25);
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
         }
 
         .logo {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             color: var(--gold);
             letter-spacing: 3px;
-            text-shadow: 0 0 15px rgba(201, 162, 39, 0.4);
+            text-shadow: 0 0 18px rgba(201, 162, 39, 0.45);
         }
 
         nav a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-left: 2rem;
-            font-size: 0.95rem;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            margin-left: 1.6rem;
+            font-size: 0.88rem;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            transition: color 0.3s;
         }
-
-        nav a:hover {
-            color: var(--gold);
-        }
+        nav a:hover { color: var(--gold); }
 
         /* ===== HERO ===== */
         .hero {
@@ -109,259 +82,276 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 6rem 2rem 4rem;
+            padding: 7rem 1.5rem 4rem;
             position: relative;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                linear-gradient(to bottom, transparent 40%, var(--bg-dark) 100%),
-                radial-gradient(ellipse at center, rgba(30, 40, 60, 0.4) 0%, transparent 70%);
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 35%, var(--bg-dark) 100%);
             z-index: -1;
         }
 
         .hero-subtitle {
-            font-size: 0.9rem;
-            letter-spacing: 6px;
+            font-size: 0.85rem;
+            letter-spacing: 7px;
             text-transform: uppercase;
             color: var(--gold);
-            margin-bottom: 1rem;
-            opacity: 0.9;
+            margin-bottom: 1.2rem;
+            opacity: 0.95;
         }
 
         .hero h1 {
             font-family: 'Cinzel Decorative', serif;
-            font-size: clamp(2.8rem, 8vw, 5.5rem);
+            font-size: clamp(2.6rem, 7.5vw, 5.2rem);
             color: var(--gold-light);
-            text-shadow: 
-                0 0 20px rgba(201, 162, 39, 0.5),
-                0 4px 8px rgba(0,0,0,0.8);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
+            text-shadow: 0 0 25px rgba(201, 162, 39, 0.5), 0 5px 12px rgba(0,0,0,0.9);
+            margin-bottom: 1.2rem;
+            line-height: 1.05;
         }
 
         .hero-divider {
-            width: 180px;
+            width: 200px;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin: 1.5rem auto;
+            margin: 1.4rem auto;
         }
 
         .hero p {
-            max-width: 700px;
-            font-size: 1.15rem;
+            max-width: 680px;
+            font-size: 1.12rem;
             color: var(--text-muted);
-            margin-bottom: 2.5rem;
+            margin-bottom: 2.4rem;
         }
 
         .btn {
             display: inline-block;
-            padding: 0.9rem 2.5rem;
-            background: linear-gradient(180deg, var(--gold-dark) 0%, #5c4812 100%);
+            padding: 0.95rem 2.6rem;
+            background: linear-gradient(180deg, var(--gold-dark) 0%, #5a4710 100%);
             color: var(--gold-light);
             text-decoration: none;
-            font-family: 'Cinzel', serif;
             font-weight: 600;
             letter-spacing: 2px;
             text-transform: uppercase;
             border: 1px solid var(--gold);
             border-radius: 2px;
             transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+            box-shadow: 0 5px 18px rgba(0,0,0,0.55), inset 0 1px 0 rgba(255,255,255,0.12);
         }
-
         .btn:hover {
             background: linear-gradient(180deg, var(--gold) 0%, var(--gold-dark) 100%);
-            color: #0d0d0d;
-            box-shadow: 0 0 25px rgba(201, 162, 39, 0.4);
+            color: #0a0a0c;
+            box-shadow: 0 0 28px rgba(201, 162, 39, 0.45);
             transform: translateY(-2px);
         }
 
         /* ===== SECTIONS ===== */
         section {
-            padding: 5rem 2rem;
+            padding: 5rem 1.5rem;
             max-width: 1100px;
             margin: 0 auto;
         }
 
         .section-title {
             font-family: 'Cinzel Decorative', serif;
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             color: var(--gold);
             text-align: center;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem;
             letter-spacing: 2px;
         }
 
         .section-divider {
-            width: 100px;
+            width: 110px;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
-            margin: 0 auto 3rem;
+            margin: 0 auto 2.8rem;
         }
 
-        /* Cards estilo Skyrim */
+        .section-intro {
+            text-align: center;
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto 2.8rem;
+            font-size: 1.05rem;
+        }
+
+        /* Cards */
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            gap: 1.8rem;
         }
 
         .card {
-            background: linear-gradient(160deg, #1c1c1c 0%, #141414 100%);
-            border: 1px solid rgba(201, 162, 39, 0.25);
+            background: linear-gradient(160deg, #18181c 0%, #121216 100%);
+            border: 1px solid rgba(201, 162, 39, 0.22);
             border-radius: 4px;
-            padding: 2rem;
+            padding: 2rem 1.7rem;
             position: relative;
             overflow: hidden;
             transition: all 0.35s;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.5);
         }
-
         .card::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 3px;
+            top: 0; left: 0; width: 100%; height: 3px;
             background: linear-gradient(90deg, transparent, var(--gold), transparent);
         }
-
         .card:hover {
             border-color: var(--gold);
             transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(0,0,0,0.6), 0 0 20px rgba(201, 162, 39, 0.15);
+            box-shadow: 0 14px 38px rgba(0,0,0,0.6), 0 0 22px rgba(201, 162, 39, 0.12);
         }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
+        .card-icon { font-size: 2.4rem; display: block; margin-bottom: 1rem; }
         .card h3 {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--gold-light);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.7rem;
             letter-spacing: 1px;
         }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        .card p {
+        /* História */
+        .historia-box {
+            background: linear-gradient(160deg, #16161a 0%, #111114 100%);
+            border: 1px solid rgba(201, 162, 39, 0.2);
+            border-radius: 4px;
+            padding: 2.5rem;
+            position: relative;
+        }
+        .historia-box::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+        .historia-box p {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
         }
-
-        /* Destaque da Competição */
-        .competicao {
-            background: linear-gradient(180deg, rgba(26, 26, 26, 0.9) 0%, rgba(18, 21, 28, 0.95) 100%);
-            border-top: 1px solid rgba(201, 162, 39, 0.2);
-            border-bottom: 1px solid rgba(201, 162, 39, 0.2);
-            margin: 2rem 0;
-            padding: 5rem 2rem;
-        }
-
-        .competicao-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .competicao p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .arquimago {
-            display: inline-block;
-            margin-top: 1.5rem;
-            padding: 1rem 2rem;
-            border: 1px solid var(--gold-dark);
-            background: rgba(201, 162, 39, 0.08);
+        .historia-box p:last-child { margin-bottom: 0; }
+        .quote {
+            border-left: 3px solid var(--gold-dark);
+            padding-left: 1.4rem;
+            margin: 1.8rem 0;
             font-style: italic;
             color: var(--gold-light);
         }
+
+        /* Turmas */
+        .turmas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+        }
+        .turma {
+            text-align: center;
+            padding: 2rem 1.3rem;
+            background: rgba(18, 18, 22, 0.85);
+            border: 1px solid rgba(201, 162, 39, 0.18);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .turma:hover {
+            border-color: var(--gold);
+            background: rgba(25, 25, 30, 0.95);
+        }
+        .turma-emoji { font-size: 2.8rem; display: block; margin-bottom: 0.9rem; }
+        .turma h4 { color: var(--gold); font-size: 1.15rem; margin-bottom: 0.5rem; }
+        .turma p { font-size: 0.88rem; color: var(--text-muted); }
 
         /* Criaturas */
         .criaturas-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 1.5rem;
-            margin-top: 2rem;
         }
-
         .criatura {
             text-align: center;
-            padding: 1.8rem 1rem;
-            background: rgba(20, 20, 20, 0.7);
-            border: 1px solid rgba(201, 162, 39, 0.2);
+            padding: 2rem 1.2rem;
+            background: rgba(18, 18, 22, 0.85);
+            border: 1px solid rgba(201, 162, 39, 0.18);
             border-radius: 4px;
             transition: all 0.3s;
         }
-
         .criatura:hover {
             border-color: var(--gold);
-            background: rgba(30, 30, 30, 0.9);
+            background: rgba(25, 25, 30, 0.95);
         }
+        .criatura-emoji { font-size: 3rem; display: block; margin-bottom: 0.9rem; }
+        .criatura h4 { color: var(--gold); font-size: 1.15rem; margin-bottom: 0.45rem; }
+        .criatura p { font-size: 0.88rem; color: var(--text-muted); }
 
-        .criatura-emoji {
-            font-size: 3rem;
+        /* Competição */
+        .competicao {
+            background: linear-gradient(180deg, rgba(20, 20, 24, 0.95) 0%, rgba(14, 16, 22, 0.98) 100%);
+            border-top: 1px solid rgba(201, 162, 39, 0.18);
+            border-bottom: 1px solid rgba(201, 162, 39, 0.18);
+            margin: 1rem 0;
+            padding: 5rem 1.5rem;
+        }
+        .competicao-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .desafios {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.4rem;
+            margin: 2.5rem 0;
+        }
+        .desafio {
+            background: rgba(12, 12, 16, 0.8);
+            border: 1px solid rgba(201, 162, 39, 0.15);
+            padding: 1.5rem;
+            border-radius: 3px;
+        }
+        .desafio h4 {
+            color: var(--gold-light);
+            font-size: 1.05rem;
+            margin-bottom: 0.5rem;
+        }
+        .desafio p { font-size: 0.9rem; color: var(--text-muted); }
+        .arquimago {
             display: block;
-            margin-bottom: 0.8rem;
-        }
-
-        .criatura h4 {
-            color: var(--gold);
-            font-size: 1.15rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .criatura p {
-            font-size: 0.85rem;
-            color: var(--text-muted);
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.2rem 2rem;
+            border: 1px solid var(--gold-dark);
+            background: rgba(201, 162, 39, 0.07);
+            font-style: italic;
+            color: var(--gold-light);
+            font-size: 1.05rem;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 3rem 2rem;
-            border-top: 1px solid rgba(201, 162, 39, 0.2);
-            background: #0a0a0a;
+            padding: 3.5rem 1.5rem;
+            border-top: 1px solid rgba(201, 162, 39, 0.18);
+            background: #07070a;
             color: var(--text-muted);
             font-size: 0.9rem;
         }
-
         footer .logo-footer {
             font-family: 'Cinzel Decorative', serif;
             color: var(--gold);
-            font-size: 1.3rem;
-            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+            margin-bottom: 0.7rem;
             display: block;
+            letter-spacing: 2px;
         }
 
-        /* Responsivo */
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1rem;
-            }
-
-            nav a {
-                margin: 0 0.8rem;
-                font-size: 0.85rem;
-            }
-
-            .hero h1 {
-                font-size: 2.8rem;
-            }
+            header { flex-direction: column; gap: 0.8rem; padding: 1rem; }
+            nav a { margin: 0 0.7rem; font-size: 0.8rem; }
+            .hero h1 { font-size: 2.6rem; }
+            section { padding: 3.5rem 1.2rem; }
         }
     </style>
 </head>
@@ -372,6 +362,8 @@
         <div class="logo">ROCHA CHUEIRI</div>
         <nav>
             <a href="#escola">A Escola</a>
+            <a href="#historia">História</a>
+            <a href="#turmas">Turmas</a>
             <a href="#criaturas">Criaturas</a>
             <a href="#competicao">Competição</a>
         </nav>
@@ -383,9 +375,9 @@
         <h1>Rocha Chueiri</h1>
         <div class="hero-divider"></div>
         <p>
-            Uma escola mágica ancestral, escondida entre as Montanhas Nebulosas, 
-            onde os jovens de diversas raças aprendem os segredos da magia 
-            ao lado de criaturas lendárias.
+            Uma escola mágica ancestral, escondida entre picos cobertos de névoa eterna, 
+            onde jovens de todas as raças aprendem os segredos da magia ao lado de 
+            grifos, fênixes e dragões. Aqui, o poder e a sabedoria caminham juntos.
         </p>
         <a href="#competicao" class="btn">Desafie o Destino</a>
     </section>
@@ -394,6 +386,10 @@
     <section id="escola">
         <h2 class="section-title">A Escola Ancestral</h2>
         <div class="section-divider"></div>
+        <p class="section-intro">
+            Rocha Chueiri não é apenas um lugar de aprendizado. É um refúgio, uma fortaleza 
+            e um campo de provas onde apenas os dignos prosperam.
+        </p>
 
         <div class="cards">
             <div class="card">
@@ -401,24 +397,91 @@
                 <h3>Montanhas Nebulosas</h3>
                 <p>
                     Escondida em vales cobertos por névoa eterna e picos que tocam as estrelas, 
-                    Rocha Chueiri permanece protegida dos olhos do mundo comum. Apenas os escolhidos encontram o caminho.
+                    a escola permanece protegida dos olhos do mundo comum. Dizem que apenas 
+                    aqueles que ouvem o chamado da magia conseguem encontrar o caminho.
                 </p>
             </div>
             <div class="card">
                 <span class="card-icon">✨</span>
                 <h3>Diversas Raças</h3>
                 <p>
-                    Humanos, elfos, anões, orcs e outras raças compartilham os mesmos corredores de pedra. 
-                    Aqui, a magia une o que a guerra separou.
+                    Humanos, elfos, anões, orcs, katari e outras raças compartilham os mesmos 
+                    corredores de pedra antiga. Aqui a magia une o que a guerra e o preconceito 
+                    separaram por séculos.
                 </p>
             </div>
             <div class="card">
                 <span class="card-icon">📜</span>
                 <h3>Sabedoria Ancestral</h3>
                 <p>
-                    Séculos de conhecimento mágico fluem pelas paredes da escola. 
-                    Runas antigas iluminam os salões e os mestres guardam segredos esquecidos pelo tempo.
+                    Séculos de conhecimento fluem pelas paredes da escola. Runas antigas 
+                    iluminam os salões e os mestres guardam segredos que o tempo quase esqueceu. 
+                    Alguns sussurram que certos feitiços são tão poderosos quanto o próprio Thu'um.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HISTÓRIA -->
+    <section id="historia">
+        <h2 class="section-title">História da Escola</h2>
+        <div class="section-divider"></div>
+
+        <div class="historia-box">
+            <p>
+                Fundada há mais de mil anos por um grupo de magos exilados que buscavam 
+                um lugar livre de guerras e perseguições, Rocha Chueiri nasceu no coração 
+                das Montanhas Nebulosas. Suas fundações foram esculpidas na própria rocha 
+                viva, com a ajuda de dragões antigos que ainda guardam a região.
+            </p>
+            <p>
+                Ao longo dos séculos, a escola se tornou o maior centro de aprendizado 
+                mágico do continente. Seus alunos não apenas dominam feitiços — eles 
+                aprendem a conviver com criaturas mágicas, a respeitar o equilíbrio da 
+                natureza e a enfrentar desafios que testam corpo, mente e espírito.
+            </p>
+            <div class="quote">
+                “Como os antigos Nords diziam nas montanhas do norte: a magia não é 
+                um presente… é uma responsabilidade que se carrega até a morte.”
+            </div>
+            <p>
+                Hoje, sob a orientação do Arquimago Professor, Rocha Chueiri continua 
+                formando a próxima geração de magos, guerreiros e sábios que moldarão 
+                o destino do mundo.
+            </p>
+        </div>
+    </section>
+
+    <!-- TURMAS -->
+    <section id="turmas">
+        <h2 class="section-title">As Turmas</h2>
+        <div class="section-divider"></div>
+        <p class="section-intro">
+            Cada aluno é designado a uma das quatro turmas principais, segundo suas 
+            afinidades e o julgamento dos mestres. A rivalidade entre elas alimenta 
+            a Competição Anual.
+        </p>
+
+        <div class="turmas-grid">
+            <div class="turma">
+                <span class="turma-emoji">🔥</span>
+                <h4>Casa da Chama</h4>
+                <p>Aventureiros ousados, mestres do fogo e da coragem. Preferem ação a palavras.</p>
+            </div>
+            <div class="turma">
+                <span class="turma-emoji">❄️</span>
+                <h4>Casa do Gelo</h4>
+                <p>Estratégicos e pacientes. Dominam o frio, a defesa e a sabedoria silenciosa.</p>
+            </div>
+            <div class="turma">
+                <span class="turma-emoji">🌿</span>
+                <h4>Casa da Raiz</h4>
+                <p>Guardiões da natureza e da cura. Ligados à terra, às plantas e aos espíritos.</p>
+            </div>
+            <div class="turma">
+                <span class="turma-emoji">⚡</span>
+                <h4>Casa do Trovão</h4>
+                <p>Rápidos, imprevisíveis e poderosos. Especialistas em magia de combate e ilusão.</p>
             </div>
         </div>
     </section>
@@ -427,44 +490,72 @@
     <section id="criaturas">
         <h2 class="section-title">Companheiros Mágicos</h2>
         <div class="section-divider"></div>
-        <p style="text-align:center; color:var(--text-muted); max-width:600px; margin:0 auto 2rem;">
-            Os alunos não aprendem sozinhos. Criaturas mágicas caminham ao seu lado, 
-            ensinando, protegendo e desafiando.
+        <p class="section-intro">
+            Os alunos nunca aprendem sozinhos. Criaturas mágicas caminham ao seu lado, 
+            ensinando, protegendo e, às vezes, testando seus limites.
         </p>
 
         <div class="criaturas-grid">
             <div class="criatura">
                 <span class="criatura-emoji">🦅</span>
                 <h4>Grifos</h4>
-                <p>Guardiões dos céus e companheiros de voo. Lealdade e coragem personificadas.</p>
+                <p>Guardiões dos céus e companheiros de voo. Símbolos de lealdade e coragem inabalável.</p>
             </div>
             <div class="criatura">
                 <span class="criatura-emoji">🔥</span>
                 <h4>Fênixes</h4>
-                <p>Renascem das cinzas e ensinam que até a morte pode ser superada pela magia.</p>
+                <p>Renascem das cinzas e ensinam que até a morte pode ser superada pela magia verdadeira.</p>
             </div>
             <div class="criatura">
                 <span class="criatura-emoji">🐉</span>
                 <h4>Dragões</h4>
-                <p>Seres antigos de poder imenso. Alguns servem como mestres, outros como aliados temíveis.</p>
+                <p>Seres antigos de poder imenso. Alguns servem como mestres, outros como aliados temíveis — ou rivais.</p>
+            </div>
+            <div class="criatura">
+                <span class="criatura-emoji">🐺</span>
+                <h4>Lobos Espirituais</h4>
+                <p>Guias das montanhas. Ajudam os alunos a encontrarem o caminho quando a névoa é densa demais.</p>
             </div>
         </div>
     </section>
 
     <!-- COMPETIÇÃO -->
     <div class="competicao" id="competicao">
-        <div class="competicao-content">
+        <div class="competicao-inner">
             <h2 class="section-title">A Competição Anual</h2>
             <div class="section-divider"></div>
-            <p>
-                Todos os anos, as turmas se preparam para o grande evento que define a glória ou a humildade. 
-                Organizada pelo <strong style="color:var(--gold)">Arquimago Professor</strong>, 
-                a Competição Anual reúne equipes em desafios mágicos mortais e enigmas ancestrais.
+            <p class="section-intro" style="margin-bottom: 1.5rem;">
+                Todos os anos, as turmas se preparam para o grande evento que define 
+                a glória ou a humildade. Organizada pelo Arquimago Professor, a 
+                Competição Anual reúne equipes em desafios mágicos que testam 
+                inteligência, poder e união.
             </p>
-            <p>
+
+            <div class="desafios">
+                <div class="desafio">
+                    <h4>⚔️ Prova do Abismo</h4>
+                    <p>Equipes enfrentam criaturas das profundezas em um labirinto de pedra viva. Só a cooperação garante a saída.</p>
+                </div>
+                <div class="desafio">
+                    <h4>🌀 Duelo dos Elementos</h4>
+                    <p>Confrontos de magia pura. Cada turma representa um elemento e deve superar as outras em combates controlados.</p>
+                </div>
+                <div class="desafio">
+                    <h4>🗝️ Enigma das Runas</h4>
+                    <p>Desafios de lógica e conhecimento ancestral. Quem decifrar as runas mais antigas da escola leva a vantagem.</p>
+                </div>
+                <div class="desafio">
+                    <h4>🏔️ Ascensão Nebulosa</h4>
+                    <p>Uma corrida até o pico mais alto das Montanhas Nebulosas. Magia, resistência e criaturas selvagens no caminho.</p>
+                </div>
+            </div>
+
+            <p style="text-align:center; color:var(--text-muted); font-size:1.05rem;">
                 Apenas os mais habilidosos, corajosos e unidos alcançarão a vitória. 
-                O prêmio? Honra eterna e o reconhecimento da escola.
+                O prêmio? Honra eterna, o direito de carregar o estandarte da escola 
+                e o reconhecimento do próprio Arquimago.
             </p>
+
             <div class="arquimago">
                 “Que a magia decida quem é digno.” — Arquimago Professor
             </div>
@@ -474,9 +565,9 @@
     <!-- FOOTER -->
     <footer>
         <span class="logo-footer">ROCHA CHUEIRI</span>
-        <p>Escola Mágica Ancestral • Estilo Skyrim</p>
-        <p style="margin-top:1rem; font-size:0.8rem; opacity:0.6;">
-            Feito para aventuras épicas • HTML puro • Pronto para GitHub Pages
+        <p>Escola Mágica Ancestral • Estilo inspirado em Skyrim</p>
+        <p style="margin-top:0.8rem; font-size:0.8rem; opacity:0.55;">
+            HTML puro • Pronto para GitHub Pages • Feito para aventuras épicas
         </p>
     </footer>
 
